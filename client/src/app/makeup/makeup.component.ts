@@ -59,7 +59,6 @@ export class MakeupComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.makeupservice.getBooking().subscribe(data => {
       this.Bookings = data;
       console.log(this.Bookings);
@@ -71,6 +70,10 @@ export class MakeupComponent implements OnInit {
     this.makeupservice.getStaff().subscribe(data => {
       this.Staffs = data;
       console.log(this.Staffs);
+    });
+    this.makeupservice.getStyle().subscribe(data => {
+      this.Styles = data;
+      console.log(this.Styles);
     });
     this.makeupservice.getPosition().subscribe(data => {
       this.Positions = data;
@@ -101,10 +104,10 @@ export class MakeupComponent implements OnInit {
   }
 
   selectRowStyle(row) {
-    this.viewStyle.selectstyleID = row.style.styleID;
-    this.viewStyle.selectstyleIDs = row.style.styleIDs;
-    this.viewStyle.selectstyleName = row.style.styleName;
-    this.viewStyle.selectstylePrice = row.style.stylePrice;
+    this.viewStyle.selectstyleID = row.styleID;
+    this.viewStyle.selectstyleIDs = row.styleIDs;
+    this.viewStyle.selectstyleName = row.styleName;
+    this.viewStyle.selectstylePrice = row.stylePrice;
     console.log(this.viewStyle.selectstyleID);
     console.log(this.viewStyle.selectstyleIDs);
     console.log(this.viewStyle.selectstyleName);

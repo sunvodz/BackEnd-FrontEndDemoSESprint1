@@ -7,26 +7,26 @@
         <mat-tab label="STYLE">
           <p>กรุณาเลือกสไตล์ ที่ท่านต้องการ</p>
           <br>
-          <table mat-table [dataSource]="Bookings" class="mat-elevation-z8">
+          <table mat-table [dataSource]="Styles" class="mat-elevation-z8">
 
             <ng-container matColumnDef="styleID">
               <th mat-header-cell *matHeaderCellDef> Style ID </th>
-              <td mat-cell *matCellDef="let element"> {{element.style.styleID}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.styleID}} </td>
             </ng-container>
 
             <ng-container matColumnDef="styleIDs">
               <th mat-header-cell *matHeaderCellDef> Style IDs </th>
-              <td mat-cell *matCellDef="let element"> {{element.style.styleIDs}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.styleIDs}} </td>
             </ng-container>
 
             <ng-container matColumnDef="styleName">
               <th mat-header-cell *matHeaderCellDef> Style Name </th>
-              <td mat-cell *matCellDef="let element"> {{element.style.styleName}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.styleName}} </td>
             </ng-container>
 
             <ng-container matColumnDef="stylePrice">
               <th mat-header-cell *matHeaderCellDef> Style Price </th>
-              <td mat-cell *matCellDef="let element"> {{element.style.stylePrice}} </td>
+              <td mat-cell *matCellDef="let element"> {{element.stylePrice}} </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>

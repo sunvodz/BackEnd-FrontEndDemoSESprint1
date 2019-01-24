@@ -40,6 +40,21 @@ public class BookingController {
             return customerRepository.findAll().stream()
             .collect(Collectors.toList());
         }
+        @RequestMapping("/style")
+        public Collection<Style> style() {
+        return styleRepository.findAll().stream()
+                 .collect(Collectors.toList());
+    }
+    @RequestMapping("/position")
+        public Collection<Position> position() {
+        return positionRepository.findAll().stream()
+            .collect(Collectors.toList());
+    }
+    @RequestMapping("/staff")
+    public Collection<Staff> staff() {
+        return staffRepository.findAll().stream()
+                .collect(Collectors.toList());
+    }
 
     @PostMapping("/makeupBooking/{styleID}/{styleIDs}/{styleName}/{stylePrice}/{stID}/{staffIDs}/{staffName}/{bookingDate}/{cusId}/{customerIDs}/{customerName}/{addressCustomer}")
     public Booking newMakeupBooking(@PathVariable Long cusId,@PathVariable String customerIDs,
