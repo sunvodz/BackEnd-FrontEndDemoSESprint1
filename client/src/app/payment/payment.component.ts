@@ -160,10 +160,8 @@ viewBooking(row) {
 }
 
   payLeaseButtom() {
-    if (this.payments.selectLeaseName === '' || this.userData.userid === '' ||
-    this.userData.username === '' || this.payments.selectLeaseId === '' ||
-    this.payments.selectLeaseName === '' || this.payments.selectLeasePrice === '' ||
-    this.payments.selectLeaseStatus === '') {
+    if ( this.userData.userid === '' ||
+     this.payments.selectLeaseId === '' ) {
      alert('ข้อมูลไม่ครบถ้วน');
 } else {
   this.httpClient.post('http://localhost:8080/payment/' + 'Lease' + '/' + 'paid' + '/' + this.userData.userid +
@@ -193,10 +191,7 @@ this.httpClient.put('http://localhost:8080/lease/' + this.payments.selectLeaseId
   }
 }
   paySellingButtom() {
-    if (this.payments.selectLeaseName === '' || this.userData.userid === '' ||
-    this.userData.username === '' || this.payments.selectSellingId === '' ||
-    this.payments.selectSellingName === '' || this.payments.selectSellingPrice === '' ||
-    this.payments.selectStatusSelling === '') {
+    if (this.userData.userid === '' || this.payments.selectSellingId === '' ) {
      alert('ข้อมูลไม่ครบถ้วน');
 } else {
   this.httpClient.post('http://localhost:8080/payment/' + 'Selling' + '/' + 'paid' + '/' + this.userData.userid +
@@ -225,10 +220,7 @@ this.httpClient.put('http://localhost:8080/selling/' + this.payments.selectSelli
   }
   }
   payBookingButtom() {
-    if (this.payments.selectLeaseName === '' || this.userData.userid === '' ||
-    this.userData.username === '' || this.payments.selectBookingId === '' ||
-    this.payments.selectBookingName === '' || this.payments.selectBookingPrice === '' ||
-    this.payments.selectStatusBooking === '') {
+    if (this.userData.userid === '' || this.payments.selectBookingId === '' ) {
    alert('ข้อมูลไม่ครบถ้วน');
 } else {
 this.httpClient.post('http://localhost:8080/payment/' + 'Booking' + '/' + 'paid' + '/' + this.userData.userid +

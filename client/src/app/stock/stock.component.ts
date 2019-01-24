@@ -108,8 +108,8 @@ export class StockComponent implements OnInit {
     this.views.selectProductName = row.productName;
     this.views.selectProductPrice = row.productPrice;
     this.views.selectProductQuantity = row.productQuantity;
-    this.views.selectStatus = row.status.statusProduct;
-    this.views.selectType = row.type.typeName;
+    this.views.selectStatus = row.status.stateId;
+    this.views.selectType = row.type.typeIds;
      console.log( this.views.selectProductName);
      console.log(this.views.selectProductPrice);
      console.log( this.views.selectProductQuantity);
@@ -202,7 +202,7 @@ export class StockComponent implements OnInit {
     } else if (this.views.productDate === '') {
       alert('Please insert Date');
     } else {
-      this.httpClient.post('http://localhost:8080/product/addproduct/' + this.views.productID + '/' + this.views.productName
+      this.httpClient.post('http://localhost:8080/product/add/' + this.views.productID + '/' + this.views.productName
         + '/' + this.views.productPrice + '/' + this.views.productQuantity + '/' + this.views.productDate + '/'
         + this.views.statusSelect + '/' + this.views.typeSelect, this.views)
         .subscribe(
@@ -217,6 +217,15 @@ export class StockComponent implements OnInit {
           }
         );
     }
+    console.log(this.views.productID);
+    console.log(this.views.productName);
+    console.log(this.views.productPrice);
+    console.log(this.views.productQuantity);
+    console.log(this.views.productDate);
+    console.log(this.views.statusSelect);
+    console.log(this.views.typeSelect);
+
+
   }
   adddetail() {
     this.httpClient.post('http://localhost:8080/description/' +  this.views.prodID + '/' + this.views.detID + '/' + this.views.data,

@@ -79,7 +79,7 @@ export class SellComponent implements OnInit {
         });
   }
    selectRow(row) {
-    this.views.selectProductID = row.productID;
+    this.views.selectProductID = row.productIds;
     this.views.selectProductName = row.productName;
     this.views.selectProductPrice = row.productPrice;
     console.log(this.views.selectProductID);
