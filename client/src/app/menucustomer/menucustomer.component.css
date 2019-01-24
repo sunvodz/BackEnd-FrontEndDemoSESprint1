@@ -20,9 +20,11 @@
   font-color:white;
   font-size: 30px;
 }
-.button-row button,
-.button-row a {
-  margin-right: 8px;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 0.5cm;
+mat-toolbar-row{
+  font-family: 'Dosis', sans-serif;
+  font-size: 15px;
+}
+button{
+  font-family: 'Dosis', sans-serif;
+  font-size: 23px;
 }
