@@ -65,7 +65,7 @@ public class SellingController {
         String sDate1 = sellingDate;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd:MM:yyyy");
         LocalDate date = LocalDate.parse(sDate1,formatter);
-
+        newSelling.setStatus("not paid");
         newSelling.setProduct(product);
         newSelling.setCustomer(customer);
         newSelling.setStaff(staff);

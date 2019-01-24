@@ -64,7 +64,7 @@ public class BookingController {
 
         Style    style0 =  styleRepository.findBystyleID(styleID);
         newBooking.setStyle(style0);
-
+        newBooking.setStatus("not paid");
         return bookingRepository.save(newBooking);
     }
 }

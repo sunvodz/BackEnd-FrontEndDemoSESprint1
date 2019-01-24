@@ -1,0 +1,75 @@
+button-row{
+  position: absolute;
+  margin-top: 0%;
+  margin-left:20px;
+
+}
+.panel{
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  background-color: #ffcccc;
+}
+.panel1{
+  float: left;
+  width: 50%;
+  height: 1000px;
+  background-color: #ffb36d;
+}
+.panel2{
+  float: left;
+  width: 50%;
+  height: 1000px;
+  background-color:#ffb36d;
+  font-family: 'Dosis', sans-serif;
+}
+p{
+  margin-left: 20px;
+  font-size: 20px;
+  font-family: 'Dosis', sans-serif;
+
+
+}
+table {
+  width: 90%;
+  background-color: honeydew;
+  margin-left: 50px;
+  font-family: 'Dosis', sans-serif;
+}
+
+mat-form-field{
+  padding-left: 1cm;
+  width: 40%;
+  font-size: 20px;
+  color: black;
+  font-family: 'Dosis', sans-serif;
+
+}
+example-form11 {
+  min-width: 150px;
+  max-width: 500px;
+  width: 50%;
+}
+
+example-full-width1{
+  width: 50%;
+}
+example-form2 {
+  min-width: 150px;
+  max-width: 500px;
+  width: 50%;
+}
+
+example-full-width2{
+  width: 50%;
+}
+.mat-tab{
+  font-size: 100px;
+}
+td.mat-cell{
+  font-size: 20px;
+}
+th.mat-header-cell{
+  font-size: 20px;
+}
+

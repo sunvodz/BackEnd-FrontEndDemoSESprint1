@@ -1,0 +1,157 @@
+.config-check-form{
+  margin-left:10%;
+  margin-right: 10%;
+  height: 456px;
+  background-color:whitesmoke;
+  opacity: .9;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  height: 460px;
+  font-size: 15px;
+  color: black;
+}
+.example-full-width {
+  width: fit-content;
+  color: black;
+  font-size: 12px;
+  margin-right: 5%;
+}
+.example-select{
+  color: black;
+  font-size: 11px;
+  margin: 10px;
+  width: 16%;
+  margin-right: 5%;
+}
+.example-section {
+  align-content: center;
+  align-items: center;
+  height: 15px;
+}
+mat-grid-list{
+  margin-top: 0%;
+  margin-bottom: 0%;
+  height: auto;
+}
+mat-grid-tile{
+  margin-top: 0%;
+  margin-bottom: 0%;
+  height: auto;
+}
+.select{
+  color: black;
+  font-size: 12px;
+  width: 20%;
+  margin-right: 5%;
+}
+.left{
+  text-align: right;
+  margin-right: 5%;
+  margin-inside: 0%;
+  margin-bottom: 0%;
+}
+.bottom-left{
+  margin-right: 5%;
+  margin-inside: 0%;
+  margin-bottom: 0%;
+  margin-right: 5%;
+}
+.example-date{
+  color: black;
+  font-size: 12px;
+  margin-right: 5%;
+  width: 30%;
+}
+.select-right{
+  color: black;
+  font-size: 12px;
+  margin-left: 10%;
+  width: 20%;
+  text-align: left;
+  margin-top: 9%;
+}
+.example-full-width-right {
+  width: fit-content;
+  color: black;
+  font-size: 12px;
+  text-align: left;
+  margin-left: 10%;
+}
+.more-button{
+  right: 40%;
+  left: 40%;
+  text-align: center;
+  margin-right: 10px;
+  background-color: #ff9999;
+  color: navajowhite;
+}
+.butt{
+  text-align: center;
+}
+.button-row button,
+.button-row a {
+  text-align: center;
+  margin-right: 10px;
+}
+.example-width{
+   width: 30%;
+   color: black;
+   font-size: 12px;
+   margin-right: 5%;
+ }
+.example-width3{
+  width: 20%;
+  color: black;
+  font-size: 12px;
+  margin-right: 5%;
+}
+.example-width2{
+  width: 15%;
+  color: black;
+  font-size: 12px;
+  margin-right: 5%;
+}
+.select-left{
+  color: black;
+  font-size: 12px;
+  width: 30%;
+  text-align: left;
+  margin-right: 5%;
+}
+.example-margin {
+  font-size: 12px;
+  margin: 10px;
+}
+.example-form-right{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  height: 460px;
+  font-size: 15px;
+  color: black;
+}
+.example-container {
+  height: 460px;
+  overflow: auto;
+}
+table {
+  width: 100%;
+  background-color:#e4d1d1;
+  font-size: 15px;
+}
+.example-width-right{
+  width: 40%;
+  color: black;
+  font-size: 15px;
+  margin-left: 30%;
+  margin-right: 5%;
+}
+.mat-row:hover{
+  background-color: #d1c7c7;
+}
+.placeholder{
+  color: rgb(0, 0, 0);
+}

@@ -1,0 +1,75 @@
+.example-card {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  width: 90%;
+  background-color: #ffe27c;
+  -webkit-text-fill-color: black;
+}
+
+a{
+  color: black;
+}
+
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+  font-family: Kanit, sans-serif;
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+}
+
+.example-container > * {
+  width: 50%;
+  padding-left: 5px;
+  background-color: #f7b9c4;
+}
+.selected{
+  background-color: #f7b9c4;
+}
+.selected1{
+  background-color: #f7b9c4;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 60%;
+}
+.toolbar{
+  font-family: 'Cookie', cursive;
+  background-color: #ff9999;
+  opacity: 100%;
+}
+.more-button {
+  margin-left: 50px;
+  font-color: white;
+  font-size: 25px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.menu-list{
+  float: left;
+  margin-left: 50px;
+  font-color: white;
+  font-size: 35px;
+}
+a{
+  color: white;
+}
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+}

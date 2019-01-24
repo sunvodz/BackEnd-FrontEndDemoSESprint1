@@ -1,0 +1,140 @@
+<app-menuadmin></app-menuadmin>
+<fieldset>
+  <legend><h2>Information</h2></legend>
+  <mat-grid-list cols="2" >
+    <mat-grid-tile>
+
+      <div align="panal1">
+
+        <table mat-table [dataSource]="Staffs"  class="mat-elevation-z8" >
+
+          <ng-container matColumnDef="staffIds">
+            <th mat-header-cell *matHeaderCellDef> Ids </th>
+            <td mat-cell *matCellDef="let element"> {{element.staffIds}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="staffName">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.staffName}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="staffGender">
+            <th mat-header-cell *matHeaderCellDef> Gender </th>
+            <td mat-cell *matCellDef="let element"> {{element.staffGender}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="educationId">
+            <th mat-header-cell *matHeaderCellDef> Education </th>
+            <td mat-cell *matCellDef="let element">{{element.education.educationName}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="staffPhone">
+            <th mat-header-cell *matHeaderCellDef> Phone </th>
+            <td mat-cell *matCellDef="let element">{{element.staffPhone}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="staffJobtype">
+            <th mat-header-cell *matHeaderCellDef> Jobtype </th>
+            <td mat-cell *matCellDef="let element">{{element.staffJobtype}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="staffSalary">
+            <th mat-header-cell *matHeaderCellDef> Salary </th>
+            <td mat-cell *matCellDef="let element">{{element.staffSalary}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="positionId">
+          <th mat-header-cell *matHeaderCellDef> Position </th>
+          <td mat-cell *matCellDef="let element">{{element.position.positionName}}</td>
+        </ng-container>
+
+          <ng-container matColumnDef="experienceId">
+            <th mat-header-cell *matHeaderCellDef> Experience </th>
+            <td mat-cell *matCellDef="let element">{{element.experience.experienceName}}</td>
+
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; "></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns; "(click)="selectRow(row)"></tr>
+
+        </table>
+        <!--<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>-->
+      </div>
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+
+      <div align="panal2">
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="views.staffName"  [(value)]="views.SelectStaffName" name="staffName" [value] = "views.staffName">
+            <mat-placeholder class="placeholder">Name</mat-placeholder>
+          </mat-form-field>
+          &nbsp;&nbsp;
+          <mat-form-field class="example-full-width">
+              <mat-select placeholder="Experience" [(ngModel)]="views.experienceId" name = "experienceId"[(value)]="views.SelectExperienceId" >
+                <mat-option *ngFor="let Experience of Experiences" [value]="Experience.experienceId">
+                  {{Experience.experienceName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </form><br>
+
+        <form class="example-form">
+          <!--Combo box = Education-->
+          <mat-form-field class="example-full-width">
+              <mat-select placeholder="Education" [(ngModel)]="views.educationId" name = "educationId"[(value)]="views.SelectEducationId" >
+                <mat-option *ngFor="let Education of Educations" [value]="Education.educationId">
+                  {{Education.educationName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            &nbsp;&nbsp;
+        <!--Combo box = Gender-->
+          <mat-radio-group class="example-radio-group" [(ngModel)]="views.staffGender" name = "staffGender">
+          <mat-radio-button value="Man" >Man</mat-radio-button>&nbsp;
+          <mat-radio-button value="Woman" >Woman</mat-radio-button>
+          </mat-radio-group>
+        </form><br>
+
+        <form class="example-form">
+
+          <!--Combo box = Position-->
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="Position" [(ngModel)]="views.positionId" name = "positionId"[(value)]="views.SelectPositionId" >
+              <mat-option *ngFor="let Position of Positions" [value]="Position.positionId">
+                {{Position.positionName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          &nbsp;&nbsp;
+          <!--Combo box = Jobtype-->
+          <mat-radio-group class="example-radio-group" [(ngModel)]="views.staffJobtype" name = "staffJobtype">
+            <mat-radio-button value="Full Time" >Full Time</mat-radio-button>&nbsp;
+            <mat-radio-button value="Path Time" >Path Time</mat-radio-button>
+          </mat-radio-group>
+        </form><br>
+
+        <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="views.staffSalary"  [(value)]="views.SelectStaffSalary" name="staffSalary" [value] = "views.staffSalary">
+            <mat-placeholder class="placeholder">Salary</mat-placeholder>
+          </mat-form-field>
+          &nbsp;&nbsp;
+          <mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="views.staffPhone"  [(value)]="views.SelectStaffPhone" name="staffPhone" [value] = "views.staffPhone">
+            <mat-placeholder class="placeholder">Phone</mat-placeholder>
+          </mat-form-field>
+        </form><br>
+
+        <div align="center">
+          <p>
+            <button mat-raised-button color="warn" (click)=" Post()">Add</button>
+            &nbsp;&nbsp;
+            <button mat-raised-button color="warn" (click)=" Update()">Update</button>
+          </p>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</fieldset>

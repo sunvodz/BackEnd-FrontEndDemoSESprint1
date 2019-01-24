@@ -80,7 +80,6 @@ public class PayMentController {
             .collect(Collectors.toList());
         }
        
-
         @GetMapping("/pbooking")
         public Collection<Booking> booking() {
             return bookingRepository.findAll().stream()

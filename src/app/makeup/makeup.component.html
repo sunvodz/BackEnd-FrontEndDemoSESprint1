@@ -1,0 +1,175 @@
+<app-menucustomer></app-menucustomer>
+<div class="panel">
+  <div class="panel1">
+    <div class="button-row">
+      <mat-tab-group>
+        <!-- ------------------------------------------------------------------------- -->
+        <mat-tab label="STYLE">
+          <p>กรุณาเลือกสไตล์ ที่ท่านต้องการ</p>
+          <br>
+          <table mat-table [dataSource]="Bookings" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="styleID">
+              <th mat-header-cell *matHeaderCellDef> Style ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.style.styleID}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="styleIDs">
+              <th mat-header-cell *matHeaderCellDef> Style IDs </th>
+              <td mat-cell *matCellDef="let element"> {{element.style.styleIDs}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="styleName">
+              <th mat-header-cell *matHeaderCellDef> Style Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.style.styleName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="stylePrice">
+              <th mat-header-cell *matHeaderCellDef> Style Price </th>
+              <td mat-cell *matCellDef="let element"> {{element.style.stylePrice}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns1; "(click)="selectRowStyle(row)"></tr>
+          </table>
+
+        </mat-tab>
+        <!-- ------------------------------------------------------------------------- -->
+        <mat-tab label="STAFF">
+          <p>กรุณาเลือกช่างแต่งหน้า ที่ท่านต้องการจอง</p>
+          <br>
+          <table mat-table [dataSource]="Staffs" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="stID">
+              <th mat-header-cell *matHeaderCellDef> Staff ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.staffId}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="staffIDs">
+              <th mat-header-cell *matHeaderCellDef> Staff IDs </th>
+              <td mat-cell *matCellDef="let element"> {{element.staffIds}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="staffName">
+              <th mat-header-cell *matHeaderCellDef> Staff Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.staffName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="positionName">
+              <th mat-header-cell *matHeaderCellDef> Position Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.position.positionName}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns2; "(click)="selectRowStaff(row)"></tr>
+          </table>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+  <!-- ------------------------------------------------------------------------- -->
+  <div class="panel2">
+
+    <mat-toolbar>
+      <span> ยืนยันการจองคิว </span>
+    </mat-toolbar>
+    <p>สไตล์ที่ท่านเลือก</p>
+    <form class="example-form">
+    <mat-form-field class="example-full-width">
+    <input matInput [(ngModel)]="viewStyle.styleID"  [(value)]="viewStyle.selectstyleID" name="styleID" [value] = "viewStyle.styleID">
+    <mat-placeholder class="placeholder">styleID</mat-placeholder>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+    <input matInput [(ngModel)]="viewStyle.styleIDs"  [(value)]="viewStyle.selectstyleIDs" name="styleIDs" [value] = "viewStyle.styleIDs">
+    <mat-placeholder class="placeholder">styleIDs</mat-placeholder>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+    <input matInput [(ngModel)]="viewStyle.styleName"  [(value)]="viewStyle.selectstyleName" name="styleName" [value] = "viewStyle.styleName">
+    <mat-placeholder class="placeholder">styleName</mat-placeholder>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+    <input matInput [(ngModel)]="viewStyle.stylePrice"  [(value)]="viewStyle.selectstylePrice" name="styleName" [value] = "viewStyle.stylePrice">
+    <mat-placeholder class="placeholder">stylePrice</mat-placeholder>
+    </mat-form-field>
+    </form>
+
+<!--------------------------------------------------------------------------------------------------->
+    <p>ช่างที่ท่านเลือก</p>
+    <form class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="viewStaff.stID"  [(value)]="viewStaff.selectstID" name="stID" [value] = "viewStaff.stID">
+        <mat-placeholder class="placeholder">staffID</mat-placeholder>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="viewStaff.staffIDs"  [(value)]="viewStaff.selectstaffIDs" name="staffIDs" [value] = "viewStaff.staffIDs">
+        <mat-placeholder class="placeholder">staffIDs</mat-placeholder>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="viewStaff.staffName"  [(value)]="viewStaff.selectstaffName" name="staffName" [value] = "viewStaff.staffName">
+        <mat-placeholder class="placeholder">staffName</mat-placeholder>
+      </mat-form-field>
+
+      <!--<mat-form-field class="example-full-width">-->
+        <!--<input matInput [(ngModel)]="viewStaff.positionName"  [(value)]="viewStaff.selectpositionName" name="positionName" [value] = "viewStaff.positionName">-->
+        <!--<mat-placeholder class="placeholder">positionName</mat-placeholder>-->
+      <!--</mat-form-field>-->
+    </form>
+<!--------------------------------------------------------------------------------------------------->
+    <p>กรุณาเลือกวันที่ ที่ท่านต้องการจอง</p>
+    <!--Combo box = bookingDate-->
+    <form>
+      <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="picker" placeholder="bookingDate"[(ngModel)]="bookingDate" name="bookingDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+    </form>
+
+    <p>กรุณาใส่ข้อมูลส่วนตัวของท่านให้ถูกต้อง</p>
+    <!--Combo box = cusId,customerAddress-->
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Customer ID" [(ngModel)]="cusId" name="cusId">
+          <mat-option *ngFor="let Customer of Customers" [value]="Customer.cusId">
+            {{Customer.cusId}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Customer IDs" [(ngModel)]="customerIDs" name="customerIDs">
+          <mat-option *ngFor="let Customer of Customers" [value]="Customer.customerIDs">
+            {{Customer.customerIDs}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Customer Name" [(ngModel)]="customerName" name="customerName">
+          <mat-option *ngFor="let Customer of Customers" [value]="Customer.customerName">
+            {{Customer.customerName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Customer Address" [(ngModel)]="addressCustomer" name="addressCustomer">
+          <mat-option *ngFor="let Customer of Customers" [value]="Customer.addressCustomer">
+            {{Customer.addressCustomer}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+
+    <br><br>
+    <div align="center">
+      <button mat-raised-button color= "primary" (click)= OK()>OK</button>
+    </div>
+  </div>
+</div>

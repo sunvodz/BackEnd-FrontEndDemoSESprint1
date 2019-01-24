@@ -1,0 +1,31 @@
+<mat-tab-group>
+  <mat-tab label="Userlogin">
+    <div class="example-container" align="center">
+    <mat-form-field class="example-full-width" >
+      <input matInput placeholder="UserName" [(ngModel)]="loginuser.userName" #Username>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" >
+      <input matInput placeholder="password" [(ngModel)]="loginuser.upassword" [type]="hide ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="warn" (click)="loginUser()">Login</button>
+  </div>
+</mat-tab>
+  <mat-tab label="Adminlogin">
+    <div class="example-container" align="center">
+      <mat-form-field class="example-full-width" >
+        <input matInput placeholder="adminName" [(ngModel)]="loginuser.adminName" #Username>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width" >
+        <input matInput placeholder="password" [(ngModel)]="loginuser.apassword" [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="warn" (click)="loginAdmin()">Login</button>
+    </div> </mat-tab>
+</mat-tab-group>
+
+

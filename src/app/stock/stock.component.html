@@ -1,0 +1,172 @@
+<app-menuadmin></app-menuadmin>
+<mat-card class="config-check-form">
+  <mat-grid-list cols="2" rowHeight="460px">
+    <mat-grid-tile class="left">
+     <form class="example-form">
+       <mat-form-field class="example-full-width">
+         <input  type="text"[(ngModel)]="views.productID" aria-label="Number" matInput [formControl]="myControl" [(value)]="views.selectProductID" name="pid" [value] = "views.productID" >
+         <mat-placeholder class="placeholder">Product  ID</mat-placeholder>
+       </mat-form-field>
+       <br/>
+       <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="views.productName"  [(value)]="views.selectProductName" name="names" [value] = "views.productName">
+         <mat-placeholder class="placeholder">Name</mat-placeholder>
+       </mat-form-field><br/>
+    <mat-form-field class="example-width">
+      <input matInput  [(ngModel)]="views.productPrice"  [(value)]="views.selectProductPrice" name="price" [value] = "views.productPrice">
+      <mat-placeholder class="placeholder">Price</mat-placeholder>
+    </mat-form-field>
+       <mat-form-field class="example-width">
+       <input matInput [(ngModel)]="views.productQuantity"[(value)]="views.selectProductQuantity" name="quantity" [value]="views.ProductQuantity">
+         <mat-placeholder class="placeholder">Quantity</mat-placeholder>
+       </mat-form-field><br/>
+       <mat-form-field class="example-date">
+         <input matInput [matDatepicker]="picker" [(ngModel)]="views.productDate"name="date" [(value)]="views.selectProductDate" [value]="views.productDate">
+         <mat-placeholder class="placeholder">Date</mat-placeholder>
+         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+         <mat-datepicker #picker></mat-datepicker>
+       </mat-form-field><br/>
+       <mat-form-field class="example-width">
+         <mat-placeholder class="placeholder">Type</mat-placeholder>
+         <mat-select [(ngModel)]="views.typeSelect" name = "type"[(value)]="views.selectType" >
+           <mat-option>None</mat-option>
+           <mat-option *ngFor="let type of type" [value]="type.typeIds">
+             {{type.typeName}}
+           </mat-option>
+         </mat-select>
+       </mat-form-field>
+       <mat-form-field class = "select-left">
+         <mat-placeholder class="placeholder">Status</mat-placeholder>
+         <mat-select [(ngModel)]="views.statusSelect"name = "statuses" [(value)]="views.selectStatus" >
+           <mat-option>None</mat-option>
+           <mat-option *ngFor="let status of status" [value]="status.stateId">
+             {{status.statusProduct}}
+           </mat-option>
+         </mat-select>
+       </mat-form-field><br/>
+       <button mat-mini-fab class="bottom-left">
+       <mat-icon (click)="addproduct()"aria-label="Example icon-button with a save icon">saveproduct</mat-icon>
+     </button>
+       <button mat-mini-fab class="bottom-left">
+         <mat-icon (click)="updateproduct()"aria-label="Example icon-button with a update icon">edit</mat-icon>
+       </button>
+  <br/> <br/>
+      Detail :
+
+       <mat-form-field class="example-width">
+         <mat-placeholder class="placeholder"></mat-placeholder>
+         <mat-select [(ngModel)]="views.detID" [(value)]="views.selectDetail" name = "did" >
+           <mat-option>None</mat-option>
+           <mat-option *ngFor="let detail of detail" [value]="detail.detailIds">
+             {{detail.detailName}}
+           </mat-option>
+         </mat-select>
+       </mat-form-field>
+       <mat-form-field class="example-width3">
+         <input matInput  [(ngModel)]="views.data"  [(value)]="views.selectData" name="dat" [value] = "views.data">
+         <mat-placeholder class="placeholder"> </mat-placeholder>
+       </mat-form-field><br>
+       <button mat-mini-fab class="bottom-left">
+         <mat-icon (click)="adddetail()"aria-label="Example icon-button with a save icon">savedetail</mat-icon>
+       </button>
+       <button mat-mini-fab class="bottom-left">
+         <mat-icon (click)="updatedetail()" aria-label="Example icon-button with a update icon">edit</mat-icon>
+       </button>
+      </form>
+    </mat-grid-tile>
+
+    <mat-grid-tile >
+      <form class="example-form-right" >
+        <div class="example-container mat-elevation-z8">
+          <br/>
+          <mat-form-field appearance="outline" class="example-width-right">
+            <mat-select placeholder="Product  ID" [(ngModel)]="views.prodID"  [(value)] = "views.prodID"  name = "prod"  >
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let prod of product" [value]="prod.prodId">
+                {{prod.productIds}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-mini-fab class="bottom-left">
+            <mat-icon (click)="delete()"aria-label="Example icon-button with a bin icon">delete</mat-icon>
+          </button>
+
+          <table mat-table [dataSource]="product" class="mat-elevation-z8">
+            <!-- PID Column -->
+            <ng-container matColumnDef="PID">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.prodId}} </td>
+            </ng-container>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="productID">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.productIds}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="productName">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+            </ng-container>
+
+            <!-- Price Column -->
+            <ng-container matColumnDef="productPrice">
+              <th mat-header-cell *matHeaderCellDef> Price </th>
+              <td mat-cell *matCellDef="let element"> {{element.productPrice}} </td>
+            </ng-container>
+            <!-- Quantity Column -->
+            <ng-container matColumnDef="productQuantity">
+              <th mat-header-cell *matHeaderCellDef> Quantity </th>
+              <td mat-cell *matCellDef="let element"> {{element.productQuantity}} </td>
+            </ng-container>
+
+            <!-- Type Column -->
+            <ng-container matColumnDef="types">
+              <th mat-header-cell *matHeaderCellDef> Type </th>
+              <td mat-cell *matCellDef="let element"> {{element.type.typeName}} </td>
+            </ng-container>
+            <!-- Status Column -->
+            <ng-container matColumnDef="statuses">
+              <th mat-header-cell *matHeaderCellDef> Status </th>
+              <td mat-cell *matCellDef="let element"> {{element.status.statusProduct}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns; "(click)="selectRow(row)"></tr>
+          </table>
+          <br/>
+          <table mat-table [dataSource]="description" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="PID">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.product.prodId}} </td>
+            </ng-container>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="productID">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.product.productIds}} </td>
+            </ng-container>
+
+            <!-- Detail Column -->
+            <ng-container matColumnDef="detail">
+              <th mat-header-cell *matHeaderCellDef> Detail </th>
+              <td mat-cell *matCellDef="let element"> {{element.detail.detailName}} </td>
+            </ng-container>
+
+            <!-- Data Column -->
+            <ng-container matColumnDef="data">
+              <th mat-header-cell *matHeaderCellDef> Data </th>
+              <td mat-cell *matCellDef="let element"> {{element.dataDescription}} </td>
+            </ng-container>
+
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumnss; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnss; "(click)="electRow(row)"></tr>
+          </table>
+        </div>
+      </form>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
