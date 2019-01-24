@@ -33,12 +33,9 @@ public class Data {
 
     @Bean
     ApplicationRunner init(PositionRepository positionRepository,
-                           PayerRepository payerRepository,
                            StaffRepository staffRepository,
                            SellingRepository sellingRepository,
                            EducationRepository educationRepository,
-                           GenderRepository genderRepository,
-                           JobtypeRepository jobtypeRepository,
                            DetailRepository detailRepository,
                            ProductRepository productRepository,
                            StatusRepository statusRepository,
@@ -323,12 +320,12 @@ public class Data {
             Position po7 = positionRepository.findByPositionId(7L);
 
 
-            Stream.of("Admin", "Ploy").forEach(staffName -> {
+            Stream.of("Owner", "Ploy", "Sunvo" , "Au").forEach(staffName -> {
                 Staff staffdb = new Staff();
                 staffdb.setStaffName(staffName);
                 staffRepository.save(staffdb);
 
-                if (staffName == "Admin") {
+                if (staffName == "Owner") {
                     staffdb.setStaffIds("St"+staffdb.getStaffId());
                     staffdb.setStaffName(staffName);
                     staffdb.setEducation(ed1);
@@ -336,7 +333,7 @@ public class Data {
                     staffdb.setStaffGender("Man");
                     staffdb.setStaffJobtype("Full Time");
                     staffdb.setStaffPhone("086-141-9833");
-                    staffdb.setStaffSalary(15000);
+                    staffdb.setStaffSalary(50000);
                     staffdb.setPosition(po6);
                     staffdb.setStaffStatus("Un Paid");
                     staffRepository.save(staffdb);
@@ -348,9 +345,35 @@ public class Data {
                     staffdb.setStaffJobtype("Part Time");
                     staffdb.setEducation(ed2);
                     staffdb.setExperience(ex2);
-                    staffdb.setStaffPhone("081-108-6559");
-                    staffdb.setStaffSalary(25000);
+                    staffdb.setStaffPhone("081-108-6599");
+                    staffdb.setStaffSalary(29000);
                     staffdb.setPosition(po5);
+                    staffdb.setStaffStatus("Un Paid");
+                    staffRepository.save(staffdb);
+                }
+                else    if (staffName == "Sunvo") {
+                    staffdb.setStaffIds("St"+staffdb.getStaffId());
+                    staffdb.setStaffName(staffName);
+                    staffdb.setStaffGender("Man");
+                    staffdb.setStaffJobtype("Part Time");
+                    staffdb.setEducation(ed3);
+                    staffdb.setExperience(ex3);
+                    staffdb.setStaffPhone("081-105-6559");
+                    staffdb.setStaffSalary(20000);
+                    staffdb.setPosition(po4);
+                    staffdb.setStaffStatus("Un Paid");
+                    staffRepository.save(staffdb);
+                }
+                else    if (staffName == "Au") {
+                    staffdb.setStaffIds("St"+staffdb.getStaffId());
+                    staffdb.setStaffName(staffName);
+                    staffdb.setStaffGender("Man");
+                    staffdb.setStaffJobtype("Part Time");
+                    staffdb.setEducation(ed4);
+                    staffdb.setExperience(ex4);
+                    staffdb.setStaffPhone("081-103-6559");
+                    staffdb.setStaffSalary(2500);
+                    staffdb.setPosition(po3);
                     staffdb.setStaffStatus("Un Paid");
                     staffRepository.save(staffdb);
                 }
