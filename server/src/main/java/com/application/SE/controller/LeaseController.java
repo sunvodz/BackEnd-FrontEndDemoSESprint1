@@ -32,6 +32,27 @@ public class LeaseController {
         return leaseRepository.findAll().stream().collect(Collectors.toList());
     }
 
+    @GetMapping("/productRenting")
+    public Collection<Product> product() {
+        return productRepository.findAll().stream()
+                .filter(this::isProduct)
+                .collect(Collectors.toList());
+    }
+    private boolean isProduct(Product product){
+
+        return product.getStatus().getStatusProduct().equals("Renting");
+    }
+
+    @RequestMapping("/staffRenter")
+    public Collection<Staff> staff() {
+        return staffRepository.findAll().stream()
+                .filter(this::isStaff)
+                .collect(Collectors.toList());
+    }
+    private boolean isStaff(Staff staff){
+        return staff.getPosition().getPositionName().equals("Renter");
+    }
+
     @PostMapping("/renting/{productID}/{productName}/{productPrice}/{customerID}/{staffIDs}/{ReserveDate}/{ReturnDate}")
     public Lease newRenting(@PathVariable String productID,@PathVariable String productName,@PathVariable String productPrice,@PathVariable String customerID, @PathVariable String staffIDs
        , @PathVariable String ReserveDate, @PathVariable String ReturnDate){

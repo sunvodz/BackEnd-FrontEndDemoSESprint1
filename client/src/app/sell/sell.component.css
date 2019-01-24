@@ -1,0 +1,69 @@
+mat-grid-tile {
+  background: lightblue;
+}
+body{
+  color: #030003;
+}
+.panel{
+  position: absolute;
+  width: 100%;
+  height: 700px;
+  background-color: #ffcfbf;
+}
+.panel1{
+  float: left;
+  font-size: 30px;
+  width: 50%;
+  height: 800px;
+  background-color: #eeefd9;
+  font-family: 'Montserrat', sans-serif;
+}
+.panel2{
+  float: left;
+  width: 50%;
+  height: 800px;
+  background-color: #eeefd9;
+  font-family: 'Montserrat', sans-serif;
+}
+/* radios*/
+.mat-radio-button ~ .mat-radio-button {
+  padding-right: 15px;
+  margin-left: 25px;
+}
+p{
+  margin-left: 50px;
+  font-size: 20px;
+}
+/*table*/
+table {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: rgba(255, 207, 191, 0.93);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  -webkit-text-fill-color: black;
+}
+/*time*/
+.example-form {
+  min-width: 150px;
+  max-width: 100px;
+  width: 100%;
+  margin-left: 70px;
+  color: #030003;
+}
+.example-full-width {
+  width: 100%;
+}
+
+/*photo*/
+.example-card {
+  max-width: 150px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+

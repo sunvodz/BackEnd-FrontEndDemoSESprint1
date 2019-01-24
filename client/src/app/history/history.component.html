@@ -1,0 +1,38 @@
+<app-menuadmin></app-menuadmin>
+<div class="selected" align="center">
+
+    <mat-table [dataSource]="payment" style="width:70%">
+
+        <ng-container matColumnDef="pmId" >
+          <mat-header-cell *matHeaderCellDef >No.</mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.pmId}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="datePay">
+          <mat-header-cell *matHeaderCellDef s> DatePay </mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.datePay}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="typePay">
+          <mat-header-cell *matHeaderCellDef > TypePay </mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.typePay}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="customerName">
+          <mat-header-cell *matHeaderCellDef > CustomerName </mat-header-cell>
+          <mat-cell *matCellDef="let element" > {{element.customer.customerName}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="statusPay">
+          <mat-header-cell *matHeaderCellDef> StatusPay </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.statusPay}} </mat-cell>
+        </ng-container>
+
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns" style="margin:0px"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+      </mat-table>
+
+</div>

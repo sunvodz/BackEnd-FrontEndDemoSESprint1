@@ -1,7 +1,6 @@
 package com.application.SE.Entity;
 import javax.persistence.*;
 import lombok.*;
-
 import java.util.*;
 
 @Data
@@ -35,7 +34,7 @@ public class PayMent {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sellingId")
-    private Selling selling;
+     private Selling selling;
 
-
+     
 }

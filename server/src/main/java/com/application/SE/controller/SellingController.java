@@ -34,6 +34,27 @@ public class SellingController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("/productSelling")
+    public Collection<Product> product() {
+        return productRepository.findAll().stream()
+                .filter(this::isProduct)
+                .collect(Collectors.toList());
+    }
+    private boolean isProduct(Product product){
+
+        return product.getStatus().getStatusProduct().equals("Selling");
+    }
+
+    @RequestMapping("/staffSeller")
+    public Collection<Staff> staff() {
+        return staffRepository.findAll().stream()
+                .filter(this::isStaff)
+                .collect(Collectors.toList());
+    }
+    private boolean isStaff(Staff staff){
+        return staff.getPosition().getPositionName().equals("Seller");
+    }
+
     @PostMapping("/sell/{productID}/{productName}/{productPrice}/{customerID}/{staffIDs}/{sellingDate}")
         public Selling newSSel(@PathVariable String productID,@PathVariable String productName,@PathVariable Integer productPrice,@PathVariable String customerID,@PathVariable String staffIDs,@PathVariable String sellingDate){
             Selling newSelling = new Selling();

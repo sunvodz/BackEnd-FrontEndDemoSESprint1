@@ -1,0 +1,28 @@
+.toolbar{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  background-color: #ff9999;
+  opacity: 100%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.menu-list{
+  float: left;
+  margin-left: 50px;
+  font-color:white;
+  font-size: 30px;
+}
+
+.example-icon{
+  float: left;
+  margin-left: 50px;
+  font-color:white;
+  font-size: 30px;
+}
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 0.5cm;
+}

@@ -1,0 +1,152 @@
+<app-menucustomer></app-menucustomer>
+<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+<div class="panel">
+  <div class="panel1">
+    <div class="button-row">
+      <mat-tab-group>
+
+        <mat-tab  label="PRODUCT">
+          <br>
+          <table mat-table [dataSource]="Product" class="mat-elevation-z8">
+            <ng-container matColumnDef="productID">
+              <th mat-header-cell *matHeaderCellDef> productID </th>
+              <td mat-cell *matCellDef="let element"> {{element.productIds}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="productName">
+              <th mat-header-cell *matHeaderCellDef> productName </th>
+              <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="productPrice">
+              <th mat-header-cell *matHeaderCellDef> productPrice </th>
+              <td mat-cell *matCellDef="let element"> {{element.productPrice}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="productStatus">
+              <th mat-header-cell *matHeaderCellDef> productStatus </th>
+              <td mat-cell *matCellDef="let element"> {{element.status.statusProduct}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns1; "(click)="selectRow(row)"></tr>
+
+          </table>
+
+        </mat-tab>
+        <mat-tab label="STAFF">
+          <br>
+          <table mat-table [dataSource]="Staffs" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="staffID">
+              <th mat-header-cell *matHeaderCellDef> staffIDs </th>
+              <td mat-cell *matCellDef="let element"> {{element.staffIds}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="staffName">
+              <th mat-header-cell *matHeaderCellDef> staffName </th>
+              <td mat-cell *matCellDef="let element"> {{element.staffName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> position </th>
+              <td mat-cell *matCellDef="let element"> {{element.position.positionName}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+          </table>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+  <div class="panel2">
+    <div align="center"><p>ใบเช่าชุด</p></div>
+    <p>
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="views.productID"  [(value)]="views.selectProductID" name="productID" [value] = "views.productID">
+          <mat-placeholder class="placeholder">productID</mat-placeholder>
+        </mat-form-field><br/>
+  </form>
+    <p>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="views.productName"  [(value)]="views.selectProductName" name="productName" [value] = "views.productName">
+        <mat-placeholder class="placeholder">productName</mat-placeholder>
+      </mat-form-field><br/>
+    </form>
+     <p>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="views.productPrice"  [(value)]="views.selectProductPrice" name="productPrice" [value] = "views.productPrice">
+        <mat-placeholder class="placeholder">productPrice</mat-placeholder>
+      </mat-form-field><br/>
+    </form>
+    <div align="center"> <p> กรุณาใส่ข้อมูลลูกค้าให้ถูกต้อง </p></div>
+    <br><br>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="customerID" [(ngModel)]="customerID" name="customerID">
+          <mat-option *ngFor="let Customer of Customers" [value]="Customer.customerIDs">
+            {{Customer.customerIDs}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </form>
+
+
+    <mat-form-field color="accent">
+      <mat-label>Reserve Date</mat-label>
+      <input matInput [matDatepicker]="picker1" [(ngModel)]="ReserveDate">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field color="accent">
+      <mat-label>Return Date</mat-label>
+      <input matInput [matDatepicker]="picker2" [(ngModel)]="ReturnDate">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2 color="primary"></mat-datepicker>
+    </mat-form-field>
+
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Address" [(ngModel)]="addressCustomer" name="addressCustomer">
+          <mat-option *ngFor="let Customer of Customers" [value]="Customer.addressCustomer">
+            {{Customer.addressCustomer}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </form>
+
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="staffIDs" [(ngModel)]="staffIDs" name="staffIDs">
+          <mat-option *ngFor="let Staff of Staffs" [value]="Staff.staffIds">
+            {{Staff.staffIds}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </form>
+
+    <br>
+    <div align="center">
+      <div class="button-row">
+        <button mat-fab color="primary" (click) = save() >OK</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+

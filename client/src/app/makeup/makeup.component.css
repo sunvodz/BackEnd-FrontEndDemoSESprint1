@@ -1,0 +1,140 @@
+button {
+  margin-left: 20px;
+  color: #ffffff;
+  size: 20px;
+  background-color: #3e3e3e;
+}
+.panel{
+  position: absolute;
+  width: 100%;
+  height: 1100px;
+  background-color: #ffcccc;
+
+}
+.panel1{
+  float:left;
+  width: 50%;
+  height: 1100px;
+  background-color: #ffdec7;
+}
+.panel2{
+  float: left;
+  width: 50%;
+  height: 1100px;
+  background-color: #ffd6cf;
+}
+
+.toolbar{
+  background-color: #ff9999;
+  opacity: 100%;
+}
+mat-toolbar{
+  background-color: #ffd6cf;
+  font-size: 25px;
+  color: black;
+  opacity: 70%
+}
+p{
+  margin-left: 20px;
+  color: #000000;
+  font-size: 20px;
+}
+
+label{
+  padding-right: 1cm;
+  background-color: #daf3ff;
+  color: black;
+}
+table {
+  margin-left: 5%;
+  width: 90%;
+  background-color: #ff9999;
+  font-size: 20px ;
+}
+
+mat-radio-group{
+  padding-left: 50px;
+}
+.button-row button,.button-row a {
+  margin-right: 8px;
+  color: #fff9fc;
+  background-color: #3e3e3e;
+}
+mat-form-field{
+  width: 40%;
+  padding-left: 1cm;
+  font-size: 20px;
+  color: black;
+  font-family: Kanit, sans-serif;
+  margin: 0;
+}
+.example-card {
+  max-width: 100px;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+mat-botton{
+  color: #ffd6cf;
+}
+example-form {
+  width: 70%;
+  color: black;
+}
+.example-full-width {
+  width: 30%;
+  color: black;
+  font-size: 20px;
+}
+.name-width{
+  width: 100%;
+  color: black;
+  font-size: 20px;
+}
+.address-width{
+  width: 100%;
+  color: black;
+  font-size: 20px;
+}
+.mat-elevation-z8{
+  color: black;
+  font-size: 20px;
+}
+
+span{
+  font-family: 'Kanit', sans-serif;
+  margin: 0px;
+}
+button {
+  margin-left: 20px;
+  color: #ffffff;
+  size: 20px;
+  background-color: #3e3e3e;
+}
+.toolbar{
+  background-color: #ff9999;
+  opacity: 100%;
+}
+mat-toolbar{
+  background-color: #ffd6cf;
+  font-size: 25px;
+  color: black;
+}
+p{
+  margin-left: 20px;
+  color: #000000;
+  font-size: 20px;
+  font-family: 'Kanit', sans-serif;
+}
+.mat-tab{
+  background-color: #ff0056;
+  font-size: 50px;
+  color: black;
+  opacity: 70%
+}
+
+
+
+
+

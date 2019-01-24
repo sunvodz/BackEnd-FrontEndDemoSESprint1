@@ -1,0 +1,229 @@
+<app-menuadmin></app-menuadmin>
+<body bgcolor="#ffc0ca">
+<mat-tab-group>
+    <mat-tab label="Renting">
+        <body bgcolor="#ffc0cb">
+            <div align="center">
+                {{CurrentDate | date}}
+                <br>
+              <div>
+                <mat-form-field>
+                  <input matInput (keyup)="searchIdl($event.target.value)" placeholder="Search id" style="width:300px"
+                  [value]="userData.userid" [(ngModel)]="userData.userid" name="userid">
+                </mat-form-field>&nbsp;&nbsp;
+                <div align="center"><p> SearchId : {{userData.userid}}</p></div>
+              </div>
+              <mat-card class="example-card">
+              <mat-grid-list cols="2" rowHeight="1:1">
+                  <mat-grid-tile>
+                      <table mat-table [dataSource]="dataSourcel" class="mat-elevation-z8">
+                      <ng-container matColumnDef="Memberid">
+                          <th mat-header-cell *matHeaderCellDef> UserId</th>
+                          <td mat-cell *matCellDef="let element" > {{element.customer.customerIDs}} </td>
+                        </ng-container>
+                      <ng-container matColumnDef="UserName">
+                        <th mat-header-cell *matHeaderCellDef> UserName</th>
+                        <td mat-cell *matCellDef="let element"> {{element.customer.customerName}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="Name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.product.productName}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="Price">
+                        <th mat-header-cell *matHeaderCellDef> Price </th>
+                        <td mat-cell *matCellDef="let element"> {{element.product.productPrice}} </td>
+                      </ng-container>
+                      <ng-container matColumnDef="Status">
+                        <th mat-header-cell *matHeaderCellDef> Status </th>
+                        <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                      </ng-container>
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"(click)="viewLease(row)"></tr>
+                    </table>
+    </mat-grid-tile>
+                  <mat-grid-tile>
+                  <mat-list>
+                  <mat-list-item>UserId : {{userData.userid}}</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item>UserName : {{userData.username}} </mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item>Name : {{payments.selectLeaseName}}</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item>Price : {{payments.selectLeasePrice}} </mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item>Status : {{payments.selectLeaseStatus}}</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <mat-list-item>Type : Renting</mat-list-item>
+                  <mat-divider></mat-divider>
+                  <button mat-stroked-button color="PayL" (click)="payLeaseButtom()">Pay</button>
+                  </mat-list>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </mat-card>
+            </div>
+            <br>
+          </body>
+          <br>
+    </mat-tab>
+    <mat-tab label="Selling">
+        <body bgcolor="#ffc0cb">
+            <div align="center">
+                {{CurrentDate | date}}
+                <br>
+                <div>
+                  <mat-form-field>
+                    <input matInput (keyup)="searchIds($event.target.value)" placeholder="Search id" style="width:300px"
+                    [value]="userData.userid" [(ngModel)]="userData.userid" name="userid">
+                  </mat-form-field>&nbsp;&nbsp;
+                  <div align="center"><p> SearchId : {{userData.userid}}</p></div>
+                </div>
+                <mat-card class="example-card">
+              <mat-grid-list cols="2" rowHeight="1:1">
+              <mat-grid-tile><table mat-table [dataSource]="dataSources" class="mat-elevation-z8">
+                  <ng-container matColumnDef="Memberid">
+                      <th mat-header-cell *matHeaderCellDef> UserId</th>
+                      <td mat-cell *matCellDef="let element"> {{element.customer.customerIDs}} </td>
+                    </ng-container>
+                  <ng-container matColumnDef="UserName">
+                    <th mat-header-cell *matHeaderCellDef> UserName</th>
+                    <td mat-cell *matCellDef="let element"> {{element.customer.customerName}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="Name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.product.productName}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="Price">
+                    <th mat-header-cell *matHeaderCellDef> Price </th>
+                    <td mat-cell *matCellDef="let element"> {{element.product.productPrice}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="Status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns; "(click)="viewSelling(row)"></tr>
+                </table>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-list>
+                      <mat-list-item>UserId : {{userData.userid}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>UserName : {{userData.username}} </mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Name : {{payments.selectSellingName}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Price : {{payments.selectSellingPrice}} </mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Status : {{payments.selectStatusSelling}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Type : Selling</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <br>
+                  <button mat-stroked-button color="PayL" (click)="paySellingButtom()">Pay</button>
+                    </mat-list>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card>
+            </div>
+            <br>
+          </body>
+          <br>
+    </mat-tab>
+    <mat-tab label="Booking">
+      <body bgcolor="#ffc0cb">
+        <div align="center">
+            {{CurrentDate | date}}
+            <br>
+            <div>
+              <mat-form-field>
+                <input matInput (keyup)="searchIdb($event.target.value)" placeholder="Search id" style="width:300px"
+                [value]="userData.userid" [(ngModel)]="userData.userid" name="userid">
+              </mat-form-field>&nbsp;&nbsp;
+              <div align="center"><p> SearchId : {{userData.userid}}</p></div>
+            </div>
+            <mat-card class="example-card">
+          <mat-grid-list cols="2" rowHeight="1:1">
+          <mat-grid-tile>
+            <table mat-table [dataSource]="dataSourceb" class="mat-elevation-z8" >
+              <ng-container matColumnDef="Memberid">
+                  <th mat-header-cell *matHeaderCellDef> UserId</th>
+                  <td mat-cell *matCellDef="let element"> {{element.customer.customerIDs}} </td>
+                </ng-container>
+              <ng-container matColumnDef="UserName">
+                <th mat-header-cell *matHeaderCellDef> UserName</th>
+                <td mat-cell *matCellDef="let element"> {{element.customer.customerName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.style.styleName}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Price">
+                <th mat-header-cell *matHeaderCellDef> Price </th>
+                <td mat-cell *matCellDef="let element"> {{element.style.stylePrice}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Status">
+                <th mat-header-cell *matHeaderCellDef> Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns; "(click)="viewBooking(row)"></tr>
+            </table>
+          </mat-grid-tile>
+          <mat-grid-tile>
+              <mat-list>
+                      <mat-list-item>UserId : {{userData.userid}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>UserName : {{userData.username}} </mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Name : {{payments.selectBookingStyleName}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Price : {{payments.selectBookingPrice}} </mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Status : {{payments.selectStatusBooking}}</mat-list-item>
+                      <mat-divider></mat-divider>
+                      <mat-list-item>Type : Booking</mat-list-item>
+                      <mat-divider></mat-divider>
+                  <br>
+              <button mat-stroked-button color="PayL" (click)="payBookingButtom()">Pay</button>
+                </mat-list>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+        </div>
+        <br>
+      </body>
+      <br>
+    </mat-tab>
+    <mat-tab label="History">
+        <div class="selected" align="center">
+            <table mat-table [dataSource]="payment" style="width:78%" >
+                <ng-container matColumnDef="pmId" >
+                  <mat-header-cell *matHeaderCellDef >No.</mat-header-cell>
+                  <mat-cell *matCellDef="let element" > {{element.pmId}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="datePay">
+                  <mat-header-cell *matHeaderCellDef s> DatePay </mat-header-cell>
+                  <mat-cell *matCellDef="let element" > {{element.datePay}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="typePay">
+                  <mat-header-cell *matHeaderCellDef > TypePay </mat-header-cell>
+                  <mat-cell *matCellDef="let element" > {{element.typePay}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="customerName">
+                  <mat-header-cell *matHeaderCellDef > CustomerName </mat-header-cell>
+                  <mat-cell *matCellDef="let element" > {{element.customer.customerName}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="statusPay">
+                  <mat-header-cell *matHeaderCellDef> StatusPay </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.statusPay}} </mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumnsH" style="margin:0px"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumnsH"></mat-row>
+                <br>
+              </table>
+              <br>
+        </div>
+        <br>
+      </mat-tab>
+  </mat-tab-group>
+</body>

@@ -1,0 +1,79 @@
+fieldset {
+  /*align="center"*/
+  display: block;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  /*border: 10px disabled (internal value);*/
+  font-family: 'Cookie', cursive;
+}
+p {
+  align:center;
+
+}
+mat-grid-list{
+
+}
+.form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  color: black;
+}
+.type_form{
+  align: center;
+  width: 20%;
+}
+.full-width{
+  color: black;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.card {
+  width: 500px;
+}
+
+.panel1{
+  position: absolute;
+  float:left;
+  width: 100%;
+  background-color: #ffdec7;
+}
+.panel2{
+  position: absolute;
+  float: right;
+  width: 25%;
+  height: 1000px;
+  background-color: #ffd6cf;
+}
+.toolbar{
+  background-color: #ff9999;
+  opacity: 100%;
+}
+mat-toolbar{
+  background-color: #dfbce2;
+  font-size: 15px;
+  color: black;
+  opacity: 70%
+}
+.mat-elevation-z8{
+  width: 125%;
+  height: 100%;
+  color: black;
+  font-size: 50px;
+
+}
+
+.button-row button,.button-row a {
+  margin-right: 8px;
+  color: #fff9fc;
+  background-color: #3e3e3e;
+}
+
+table {
+  width: 100%;
+  font-size: 20px ;
+}

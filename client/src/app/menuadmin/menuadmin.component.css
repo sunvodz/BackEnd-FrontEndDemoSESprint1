@@ -1,0 +1,26 @@
+.toolbar{
+  font-family: 'Cookie', cursive;
+  background-color: #ff9999;
+  opacity: 100%;
+}
+.more-button {
+  margin-left: 50px;
+  font-color: white;
+  font-size: 25px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.menu-list{
+  float: left;
+  margin-left: 50px;
+  font-color: white;
+  font-size: 35px;
+}
+a{
+  color: white;
+}
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+}
